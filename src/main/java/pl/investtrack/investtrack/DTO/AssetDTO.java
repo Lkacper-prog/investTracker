@@ -1,4 +1,4 @@
-package pl.investtrack.investtrack;
+package pl.investtrack.investtrack.DTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
