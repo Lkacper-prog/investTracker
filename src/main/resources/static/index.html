@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestTrack 🚀</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>InvestTrack 📈</h1>
+
+    <div class="card">
+        <h2>Kup Aktywo</h2>
+        <form id="add-asset-form">
+            <input type="text" id="ticker" placeholder="Symbol (np. bitcoin)" required>
+            <input type="number" id="amount" placeholder="Ilość" step="0.00000001" required>
+            <input type="number" id="price" placeholder="Cena zakupu (USD)" step="0.01" required>
+            <button type="submit">Dodaj do portfela</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Twoje Portfolio</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Ilość</th>
+                <th>Cena Zakupu</th>
+                <th>Aktualna Cena</th>
+                <th>Wartość Razem</th>
+            </tr>
+            </thead>
+            <tbody id="assets-table-body">
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: right">SUMA:</td>
+                <td id="total-portfolio-value">0.00 $</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

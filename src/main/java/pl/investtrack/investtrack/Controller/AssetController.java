@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("/assets")
 public class AssetController {
     private final AssetService assetService;
+
     @GetMapping("/{userId}")
     public List<Asset> getAllAssets(@PathVariable Integer userId){
         return assetService.getAllAssets(userId);
@@ -24,6 +25,7 @@ public class AssetController {
     public void addAsset(@RequestBody @Valid AssetDTO assetDTO){
         log.info("added asset ");
         assetService.buyAsset(assetDTO.ticker(), assetDTO.amount(),assetDTO.purchasePrice(),assetDTO.userId());
+
     }
     @GetMapping("/{userId}/price")
     public List<AssetValueDTO> getAssetsPrice (@PathVariable Integer userId){

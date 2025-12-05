@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
-import pl.investtrack.investtrack.DTO.CryptoPriceDTO;
 import tools.jackson.databind.JsonNode;
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;

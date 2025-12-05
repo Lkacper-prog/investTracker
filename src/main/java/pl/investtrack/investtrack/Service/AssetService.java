@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import pl.investtrack.investtrack.Client.CoinGeckoClient;
 import pl.investtrack.investtrack.DTO.AssetValueDTO;
-import pl.investtrack.investtrack.DTO.CryptoPriceDTO;
 import pl.investtrack.investtrack.Entities.AssetRepository;
 import pl.investtrack.investtrack.Entities.Asset;
 import java.math.BigDecimal;
@@ -25,15 +24,17 @@ public class AssetService {
         Asset assets = new Asset(ticker,amount,purchasePrice,1);
           assetRepository.save(assets);
     }
+
    public List<Asset> getAllAssets(Integer userId){
         return assetRepository.findAllByUserId(userId);
-
    }
+
    public List<AssetValueDTO> getPortfolioWithValues(Integer userId){
         List<Asset> myAssets= assetRepository.findAllByUserId(userId);
         if (myAssets.isEmpty()){
             return List.of();
         }
+
         List<String> tickers = myAssets.stream().map(Asset::getTicker).distinct().toList();
        Map<String,BigDecimal> prices= coinGeckoClient.getPrices(tickers);
 
