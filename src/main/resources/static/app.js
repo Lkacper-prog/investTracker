@@ -41,12 +41,13 @@ async function addAsset(event) {
     const ticker = document.getElementById('ticker').value;
     const amount = document.getElementById('amount').value;
     const price = document.getElementById('price').value;
+    const userId = document.getElementById('userId').value;
 
     const data = {
         ticker: ticker,
         amount: parseFloat(amount),
         purchasePrice: parseFloat(price),
-        userId: USER_ID
+        userId: userId
     };
 
     try {

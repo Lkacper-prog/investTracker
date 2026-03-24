@@ -1,6 +1,8 @@
 package pl.investtrack.investtrack.Exception;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,5 +26,34 @@ public class GlobalExceptionHandler {
         } );
         return errors;
     }
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<String> handleDataIntegrityViolation() {
 
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body("Błąd zapisu w bazie danych.");
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFound(UserNotFoundException e){
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(e.getMessage());
+
+    }
+    @ExceptionHandler(ExternalApiException.class)
+    public ResponseEntity<String> handlerExternalApiException(ExternalApiException e){
+        return ResponseEntity
+                .status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body(e.getMessage());
+    }
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGlobalException(Exception ex) {
+
+        ex.printStackTrace();
+
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("Wystąpił nieoczekiwany błąd serwera. Spróbuj ponownie później.");
+    }
 }

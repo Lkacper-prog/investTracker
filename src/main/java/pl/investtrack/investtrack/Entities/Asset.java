@@ -13,20 +13,21 @@ import java.math.BigDecimal;
 public class Asset {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String ticker;
+    private Integer id;
+    private String ticker;
     @Column(name = "amount", nullable = false,precision=20,scale=8)
-    BigDecimal ammount;
+    private BigDecimal ammount;
     @Column(name= "purchase_price",nullable = false,precision=10,scale=2)
-    BigDecimal purchasePrice;
-    @Column(name= "user_id", nullable = false )
-    Integer userId;
+    private BigDecimal purchasePrice;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    public Asset(String ticker, BigDecimal ammount, BigDecimal purchasePrice, Integer userId) {
+    public Asset(String ticker, BigDecimal ammount, BigDecimal purchasePrice,User user) {
         this.ticker = ticker;
         this.ammount = ammount;
-        this.userId = userId;
         this.purchasePrice = purchasePrice;
+        this.user=user;
     }
 }
 
