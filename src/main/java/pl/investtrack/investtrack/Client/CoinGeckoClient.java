@@ -1,10 +1,10 @@
 package pl.investtrack.investtrack.Client;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
-import com.fasterxml.jackson.databind.JsonNode;
 import pl.investtrack.investtrack.Exception.ExternalApiException;
 
 import java.math.BigDecimal;
@@ -12,7 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Slf4j
+
+@Log4j2
 @RequiredArgsConstructor
 @Component
 public class CoinGeckoClient {

@@ -16,16 +16,16 @@ public class Asset {
     private Integer id;
     private String ticker;
     @Column(name = "amount", nullable = false,precision=20,scale=8)
-    private BigDecimal ammount;
+    private BigDecimal amount;
     @Column(name= "purchase_price",nullable = false,precision=10,scale=2)
     private BigDecimal purchasePrice;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public Asset(String ticker, BigDecimal ammount, BigDecimal purchasePrice,User user) {
+    public Asset(String ticker, BigDecimal amount, BigDecimal purchasePrice, User user) {
         this.ticker = ticker;
-        this.ammount = ammount;
+        this.amount = amount;
         this.purchasePrice = purchasePrice;
         this.user=user;
     }
