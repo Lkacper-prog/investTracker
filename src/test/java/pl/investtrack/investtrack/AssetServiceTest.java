@@ -1,20 +1,8 @@
 package pl.investtrack.investtrack;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import pl.investtrack.investtrack.Client.CoinGeckoClient;
-import pl.investtrack.investtrack.DTO.AssetValueDTO;
-import pl.investtrack.investtrack.Entities.Asset;
-import pl.investtrack.investtrack.Entities.AssetRepository;
-import pl.investtrack.investtrack.Service.AssetService;
-
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Map;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.Mockito.when;
 
 public class AssetServiceTest extends BaseIntegrationTest {
     @Test

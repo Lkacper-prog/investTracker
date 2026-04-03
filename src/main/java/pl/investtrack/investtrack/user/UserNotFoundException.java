@@ -1,4 +1,4 @@
-package pl.investtrack.investtrack.Exception;
+package pl.investtrack.investtrack.user;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String message) {

@@ -1,4 +1,4 @@
-package pl.investtrack.investtrack.Service;
+package pl.investtrack.investtrack.ai;
 
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentConfig;

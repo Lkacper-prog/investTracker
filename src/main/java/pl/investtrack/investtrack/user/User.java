@@ -1,4 +1,4 @@
-package pl.investtrack.investtrack.Entities;
+package pl.investtrack.investtrack.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

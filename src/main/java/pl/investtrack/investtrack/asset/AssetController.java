@@ -1,13 +1,11 @@
-package pl.investtrack.investtrack.Controller;
+package pl.investtrack.investtrack.asset;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import pl.investtrack.investtrack.DTO.AssetDTO;
-import pl.investtrack.investtrack.DTO.AssetValueDTO;
-import pl.investtrack.investtrack.Entities.Asset;
-import pl.investtrack.investtrack.Service.AssetService;
+import pl.investtrack.investtrack.asset.dto.AssetDTO;
+import pl.investtrack.investtrack.asset.dto.AssetValueDTO;
 
 import java.util.List;
 @Log4j2

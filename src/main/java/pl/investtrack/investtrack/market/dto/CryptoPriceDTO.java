@@ -1,4 +1,4 @@
-package pl.investtrack.investtrack.DTO;
+package pl.investtrack.investtrack.market.dto;
 
 import java.math.BigDecimal;
 

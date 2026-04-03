@@ -1,17 +1,15 @@
-package pl.investtrack.investtrack.Service;
+package pl.investtrack.investtrack.asset;
 
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.investtrack.investtrack.Client.CoinGeckoClient;
-import pl.investtrack.investtrack.DTO.AssetValueDTO;
-import pl.investtrack.investtrack.Entities.Asset;
-import pl.investtrack.investtrack.Entities.AssetRepository;
-import pl.investtrack.investtrack.Entities.User;
-import pl.investtrack.investtrack.Entities.UserRepository;
-import pl.investtrack.investtrack.Exception.UserNotFoundException;
+import pl.investtrack.investtrack.market.CoinGeckoClient;
+import pl.investtrack.investtrack.asset.dto.AssetValueDTO;
+import pl.investtrack.investtrack.user.User;
+import pl.investtrack.investtrack.user.UserRepository;
+import pl.investtrack.investtrack.user.UserNotFoundException;
 
 import java.math.BigDecimal;
 import java.util.List;

@@ -1,10 +1,12 @@
-package pl.investtrack.investtrack.Entities;
+package pl.investtrack.investtrack.asset;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.investtrack.investtrack.user.User;
+
 import java.math.BigDecimal;
 
 @Entity

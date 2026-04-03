@@ -1,4 +1,4 @@
-package pl.investtrack.investtrack.Config;
+package pl.investtrack.investtrack.config;
 
 import com.google.genai.Client;
 import org.springframework.beans.factory.annotation.Value;

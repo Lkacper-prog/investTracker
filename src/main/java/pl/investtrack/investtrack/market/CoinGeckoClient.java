@@ -1,11 +1,10 @@
-package pl.investtrack.investtrack.Client;
+package pl.investtrack.investtrack.market;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
-import pl.investtrack.investtrack.Exception.ExternalApiException;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

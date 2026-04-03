@@ -1,4 +1,4 @@
-package pl.investtrack.investtrack.Entities;
+package pl.investtrack.investtrack.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
