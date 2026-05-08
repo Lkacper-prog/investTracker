@@ -7,5 +7,5 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public record AssetDTO(@NotBlank String ticker, @NotNull @Positive BigDecimal amount,
-                       @NotNull @Positive BigDecimal purchasePrice, Integer userId) {
+                       @NotNull @Positive BigDecimal purchasePrice) {
 }

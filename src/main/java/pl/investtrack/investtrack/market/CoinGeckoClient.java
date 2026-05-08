@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+import pl.investtrack.investtrack.asset.TypeOfAsset;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -15,9 +16,16 @@ import java.util.Map;
 @Log4j2
 @RequiredArgsConstructor
 @Component
-public class CoinGeckoClient {
+public class CoinGeckoClient implements MarketClient
+{
+
     private final RestClient restClient = RestClient.create();
     private static final String COINGECKO_URL = "https://api.coingecko.com/api/v3/simple/price";
+
+    @Override
+    public TypeOfAsset supports() {
+        return TypeOfAsset.CRYPTOCURRENCY;
+    }
 
     public Map<String, BigDecimal> getPrices(List<String> tickers) {
         if (tickers.isEmpty()) {

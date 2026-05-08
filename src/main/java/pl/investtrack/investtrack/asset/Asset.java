@@ -24,6 +24,9 @@ public class Asset {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+    @Column(name= "type" ,nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TypeOfAsset type;
 
     public Asset(String ticker, BigDecimal amount, BigDecimal purchasePrice, User user) {
         this.ticker = ticker;
